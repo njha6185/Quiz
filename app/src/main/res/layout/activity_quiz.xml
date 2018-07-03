@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_screen_gradient"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    tools:context="com.example.nitishkumar.quiz.QuizActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/nameScoreHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/playerNameText"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_72dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:textColor="@color/white_color"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="@dimen/_100sp"
+                app:autoSizeMinTextSize="@dimen/_12sp"
+                app:autoSizeStepGranularity="@dimen/_1sp"
+                app:autoSizeTextType="uniform"
+                tools:ignore="MissingPrefix" />
+
+            <ImageView
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_72dp"
+                android:layout_weight="1"
+                android:alpha="0.74"
+                android:contentDescription="@string/app_logo_icon"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/scoreText"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_72dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="@string/score_value_text"
+                android:textColor="@color/white_color"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="@dimen/_100sp"
+                app:autoSizeMinTextSize="@dimen/_12sp"
+                app:autoSizeStepGranularity="@dimen/_1sp"
+                app:autoSizeTextType="uniform"
+                tools:ignore="MissingPrefix" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/questionIndicatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameScoreHead"
+            android:layout_margin="@dimen/_10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/questionNoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question_no_string"
+                android:textAlignment="center"
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/_24sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/questionProgressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                android:background="@color/sky_blue"
+                android:indeterminate="false"
+                android:max="9"
+                android:progress="2" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/questionTypeHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionIndicatorLayout"
+            android:layout_margin="@dimen/_5dp"
+            android:textColor="@color/white_color"
+            android:textSize="@dimen/_15sp" />
+
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionTypeHint"
+            android:layout_margin="@dimen/_5dp"
+            android:text="@string/question_string"
+            android:textColor="@color/white_color"
+            android:textSize="@dimen/_24sp"
+            android:textStyle="bold|italic" />
+
+        <LinearLayout
+            android:id="@+id/checkboxOptionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionTextView"
+            android:layout_margin="@dimen/_10dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/option1Checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:maxLines="1"
+                android:text="@string/option_one"
+                android:textColor="@color/white_color"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="@dimen/_24sp"
+                app:autoSizeMinTextSize="@dimen/_10sp"
+                app:autoSizeStepGranularity="@dimen/_1sp"
+                app:autoSizeTextType="uniform"
+                tools:ignore="MissingPrefix" />
+
+            <CheckBox
+                android:id="@+id/option2Checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:maxLines="1"
+                android:text="@string/option_one"
+                android:textColor="@color/white_color"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="@dimen/_24sp"
+                app:autoSizeMinTextSize="@dimen/_10sp"
+                app:autoSizeStepGranularity="@dimen/_1sp"
+                app:autoSizeTextType="uniform"
+                tools:ignore="MissingPrefix" />
+
+            <CheckBox
+                android:id="@+id/option3Checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:maxLines="1"
+                android:text="@string/option_one"
+                android:textColor="@color/white_color"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="@dimen/_24sp"
+                app:autoSizeMinTextSize="@dimen/_10sp"
+                app:autoSizeStepGranularity="@dimen/_1sp"
+                app:autoSizeTextType="uniform"
+                tools:ignore="MissingPrefix" />
+
+            <CheckBox
+                android:id="@+id/option4Checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:maxLines="1"
+                android:text="@string/option_one"
+                android:textColor="@color/white_color"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="@dimen/_24sp"
+                app:autoSizeMinTextSize="@dimen/_10sp"
+                app:autoSizeStepGranularity="@dimen/_1sp"
+                app:autoSizeTextType="uniform"
+                tools:ignore="MissingPrefix" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/radioOptionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionTextView"
+            android:layout_margin="@dimen/_10dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RadioGroup
+                android:id="@+id/radioGroupView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/option1RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:maxLines="1"
+                    android:text="@string/option_one"
+                    android:textColor="@color/white_color"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="@dimen/_24sp"
+                    app:autoSizeMinTextSize="@dimen/_10sp"
+                    app:autoSizeStepGranularity="@dimen/_1sp"
+                    app:autoSizeTextType="uniform"
+                    tools:ignore="MissingPrefix" />
+
+                <RadioButton
+                    android:id="@+id/option2RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:maxLines="1"
+                    android:text="@string/option_one"
+                    android:textColor="@color/white_color"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="@dimen/_24sp"
+                    app:autoSizeMinTextSize="@dimen/_10sp"
+                    app:autoSizeStepGranularity="@dimen/_1sp"
+                    app:autoSizeTextType="uniform"
+                    tools:ignore="MissingPrefix" />
+
+                <RadioButton
+                    android:id="@+id/option3RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:maxLines="1"
+                    android:text="@string/option_one"
+                    android:textColor="@color/white_color"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="@dimen/_24sp"
+                    app:autoSizeMinTextSize="@dimen/_10sp"
+                    app:autoSizeStepGranularity="@dimen/_1sp"
+                    app:autoSizeTextType="uniform"
+                    tools:ignore="MissingPrefix" />
+
+                <RadioButton
+                    android:id="@+id/option4RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:maxLines="1"
+                    android:text="@string/option_one"
+                    android:textColor="@color/white_color"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="@dimen/_24sp"
+                    app:autoSizeMinTextSize="@dimen/_10sp"
+                    app:autoSizeStepGranularity="@dimen/_1sp"
+                    app:autoSizeTextType="uniform"
+                    tools:ignore="MissingPrefix" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ediTextOptionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionTextView"
+            android:layout_margin="@dimen/_10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/optionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                android:gravity="center"
+                android:hint="@string/type_your_answer_here"
+                android:inputType="textNoSuggestions"
+                android:textColor="@color/white_color"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submitButtonView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_20dp"
+            android:background="@drawable/start_screen_gradient"
+            android:padding="@dimen/_10dp"
+            android:text="@string/submit"
+            android:textColor="#920f06"
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</ScrollView>
